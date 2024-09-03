@@ -1,0 +1,119 @@
+@import "./simple-grid.min.css";
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: Lato, Helvetica, sans-serif;
+    line-height: 1;
+}
+
+body,
+html {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    left: 0;
+    top: 0;
+    font-size: 100%;
+}
+
+@font-face {
+    font-family: 'Unbounded';
+    src: url('../font/Unbounded.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.font-unbounded {
+    font-family: 'Unbounded', serif;
+}
+
+.bor {
+    border: 1px solid red;
+}
+
+.p-button {
+    color: #202020;
+    border-radius: 12px;
+    background: #CDF04C;
+    border-color: #CDF04C;
+    padding: 1rem 2rem;
+    font-size: .75rem;
+}
+
+.p-button-label {
+    line-height: 1 !important;
+    font-weight: 700;
+
+}
+
+.h-full {
+    height: 100%;
+}
+
+.wrapper_full {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 30px !important;
+}
+
+.flex-grow {
+    flex-grow: 1;
+}
+
+.main_content {
+    background: #fff;
+    border-radius: 20px;
+    padding: 36px 18px;
+}
+
+.main_content_title {
+    font-size: 26px;
+    font-weight: 500;
+    margin-bottom: 32px;
+}
+
+.m-0 {
+    margin: 0;
+}
+
+.p-stepper .p-stepper-header .p-stepper-action .p-stepper-number {
+    border: none;
+    background: #F1ECFF;
+}
+
+.step0 {
+    border: 1px solid red;
+}
+
+.p-stepper .p-stepper-header.p-highlight .p-stepper-number {
+    color: #fff;
+    background: #29265B;
+    border: none;
+}
+
+
+.p-stepper .p-stepper-separator {
+    height: 4px;
+    background: #F1ECFF;
+}
+
+.step0 .p-stepper-nav>.p-stepper-header:first-of-type .p-stepper-number {
+    color: #fff;
+    background: #29265B;
+}
+
+.step1 .p-stepper-nav>.p-stepper-header:nth-of-type(2) .p-stepper-number {
+    color: #fff;
+    background: #29265B;
+}
+
+.step1 .p-stepper-nav>.p-stepper-header:first-of-type .p-stepper-separator {
+    background: #29265B !important;
+}
+
+.step2 .p-stepper-nav .p-stepper-header .p-stepper-separator {
+    background: #29265B !important;
+}
