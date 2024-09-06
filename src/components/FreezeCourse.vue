@@ -14,9 +14,26 @@ const { data, isSuccess } = useQuery({
 })
 </script>
 <template>
-  <div v-if="data">
-    Для фиксации курса, переведите сумму на
-    <span v-if="data.wallet_address"> кошелек: {{ data.wallet_address }}</span>
-    <span v-if="data.card_number"> или карту: {{ data.card_number }}</span>
+  <div v-if="data" class="freeze-course flex jus-cen">
+    <p>
+      Для фиксации курса, переведите сумму на
+      <span v-if="data.wallet_address"> кошелек: {{ data.wallet_address }}</span>
+      <span v-if="data.card_number"> или карту: {{ data.card_number }}</span>
+    </p>
   </div>
 </template>
+<style scoped>
+.freeze-course {
+  width: 100%;
+
+ 
+  margin-top: 24px;
+}
+.freeze-course p {
+  text-align: center;
+  max-width: 250px;
+  font-size: 14px;
+  font-weight: 500;
+  color:#4F4F4F;
+}
+</style>

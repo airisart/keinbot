@@ -76,12 +76,13 @@ const onSubmit = handleSubmit((values) => {
 })
 </script>
 <template>
-  <div class="">
-    <form @submit="onSubmit">
+  <div class="step1-wrapper h-full">
+    <form @submit="onSubmit" class="step1-form">
       <div class="row">
         <div class="col-12">
           <Dropdown
             style="width: 100%"
+            class="drop-down"
             v-model="direct"
             :options="items"
             option-value="id"
@@ -90,10 +91,11 @@ const onSubmit = handleSubmit((values) => {
           />
           <small class="error">{{ errors.direct }}</small>
         </div>
-        <div class="col-12">
-          <InputText v-model="count" placeholder="Сумма" style="width: 100%" />
+        <div class="col-12" :class="errors.count && count && 'error-input'">
+          <InputText v-model="count" placeholder="Сумма" style="width: 100%" class="drop-down" />
           <small class="error">{{ errors.count }}</small>
         </div>
+
         <div class="col-12">
           <SelectButton
             v-model="type"
@@ -102,6 +104,7 @@ const onSubmit = handleSubmit((values) => {
             option-value="id"
             aria-labelledby="basic"
             style="width: 100%"
+            class="flex jus-beet custom-select"
           />
         </div>
         <div class="col-12" v-if="type === 1">
@@ -112,6 +115,7 @@ const onSubmit = handleSubmit((values) => {
             option-label="label"
             placeholder="Выберите офис"
             style="width: 100%"
+            class="drop-down"
           />
           <small class="error">{{ errors.office }}</small>
         </div>
@@ -123,6 +127,7 @@ const onSubmit = handleSubmit((values) => {
             option-label="label"
             placeholder="Выберите зону доставки"
             style="width: 100%"
+            class="drop-down"
           />
           <small class="error">{{ errors.office }}</small>
         </div>
@@ -141,9 +146,105 @@ const onSubmit = handleSubmit((values) => {
           />
         </div>
       </div>
-      <div class="d-flex">
-        <Button label="Далее" icon="pi pi-arrow-right" iconPos="right" type="submit" />
+      <div class="flex jus-cen">
+        <Button
+          label="Далее"
+          icon="pi pi-arrow-right "
+          iconPos="right"
+          type="submit"
+          class="bg-green btn-r next"
+        />
       </div>
     </form>
   </div>
 </template>
+<style>
+.step1-wrapper {
+  margin-top: 24px;
+}
+
+.step1-wrapper .next {
+  margin-bottom: 26px;
+}
+
+.step1-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.p-dropdown-items {
+  background: #f9f7ff;
+}
+.p-dropdown-item {
+  padding: 15px;
+}
+.custom-select .p-button-label {
+  position: relative;
+  padding-left: 24px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  height: 18px;
+}
+.custom-select .p-button-label::before {
+  content: '';
+  display: flex;
+  position: absolute;
+  left: 0px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+
+  background-color: #fff;
+  border: 1px solid #e7e7e7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.custom-select .p-highlight .p-button-label::after {
+  content: '';
+  display: flex;
+  width: 9px;
+  height: 9px;
+  background-color: #29265b;
+  border-radius: 50%;
+  position: absolute;
+  left: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.p-dropdown-items-wrapper {
+  border-radius: 6px;
+}
+.step1-wrapper .p-button {
+  height: 44px;
+  width: calc(50% - 4px);
+  border-radius: 24px;
+  background: #f9f7ff;
+  border: none;
+}
+
+.p-selectbutton .p-button.p-highlight::before {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+.error-input .drop-down {
+  border: 1px solid #c33d3d;
+  background: #ffefef;
+  color: #c33d3d;
+}
+.p-button .p-button-icon-right {
+  margin-left: 8px;
+}
+.p-button .p-button-icon-left{
+  margin-right: 8px;
+}
+</style>

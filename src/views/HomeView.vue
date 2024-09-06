@@ -11,7 +11,7 @@ import { RouterLink } from 'vue-router'
 const reload = () => location.reload()
 </script>
 <template>
-  <div class="row">
+  <div class="row home">
     <!-- <div class="col-12 center">
       <ProgressSpinner v-if="isPending" />
       <Button v-if="isError" label="Перезагрузить" severity="danger" @click="reload" />
@@ -30,7 +30,7 @@ const reload = () => location.reload()
     <div class="col-12 m-0">
       <p>
         <RouterLink to="/order">
-          <Button label="Оформить обмен" />
+          <Button label="Оформить обмен" class="" />
         </RouterLink>
       </p>
       <p>

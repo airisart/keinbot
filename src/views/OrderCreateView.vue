@@ -43,25 +43,30 @@ const handleStepChange = (stepIndex) => {
       <Stepper
         :currentStep="currentStep"
         @step-change="handleStepChange"
-        class="step0"
+        class="step0 h-full"
         :class="{
           step1: currentStep > 0,
           step2: currentStep > 1
         }"
       >
-        <StepperPanel header="">
+        <StepperPanel header="" class="h-full ">
           <template #content="{ nextCallback }">
-            <StepOne v-model="form" @next="() => nextCallback()" />
+            <StepOne v-model="form" @next="() => nextCallback()" class="h-full" />
           </template>
         </StepperPanel>
         <StepperPanel header="">
           <template #content="{ prevCallback, nextCallback }">
-            <StepTwo v-model="form" @next="() => nextCallback()" @prev="() => prevCallback()" />
+            <StepTwo
+              v-model="form"
+              @next="() => nextCallback()"
+              @prev="() => prevCallback()"
+              class="h-full"
+            />
           </template>
         </StepperPanel>
         <StepperPanel header="">
           <template #content="{ prevCallback }">
-            <StepThree v-model="form" @prev="() => prevCallback()" />
+            <StepThree v-model="form" @prev="() => prevCallback()" class="h-full " />
           </template>
         </StepperPanel>
       </Stepper>

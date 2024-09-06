@@ -30,8 +30,22 @@ html {
     font-family: 'Unbounded', serif;
 }
 
-.bor {
-    border: 1px solid red;
+
+
+.flex {
+    display: flex;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.jus-beet {
+    justify-content: space-between;
+}
+
+.jus-cen {
+    justify-content: center;
 }
 
 .p-button {
@@ -45,8 +59,14 @@ html {
 
 .p-button-label {
     line-height: 1 !important;
-    font-weight: 700;
+    font-weight: 500;
 
+}
+
+
+
+.min-h-full {
+    min-height: 100%;
 }
 
 .h-full {
@@ -71,8 +91,9 @@ html {
 
 .main_content_title {
     font-size: 26px;
-    font-weight: 500;
+    font-weight: 600;
     margin-bottom: 32px;
+    text-align: center;
 }
 
 .m-0 {
@@ -84,8 +105,13 @@ html {
     background: #F1ECFF;
 }
 
-.step0 {
-    border: 1px solid red;
+.p-stepper-panels {
+    height: calc(100% - 100px);
+    max-height: calc(100vh - 330px);
+}
+
+.p-stepper-content {
+    height: 100%;
 }
 
 .p-stepper .p-stepper-header.p-highlight .p-stepper-number {
@@ -116,4 +142,134 @@ html {
 
 .step2 .p-stepper-nav .p-stepper-header .p-stepper-separator {
     background: #29265B !important;
+}
+
+
+
+.p-dropdown.p-focus,
+.p-inputtext {
+    outline: none;
+}
+
+
+
+
+
+.btn-r {
+    border-radius: 12px !important;
+}
+
+.bg-green {
+    background: #CDF04C !important;
+}
+
+.drop-down {
+    padding: 15px;
+    font-size: 16px;
+    color: #4f4f4f;
+    font-weight: 500;
+    border: 1px solid #e5e3ff;
+    background: #f9f7ff;
+    border-radius: 6px;
+    outline: none;
+    height: 48px;
+}
+
+.p-datepicker,
+.p-datepicker .p-datepicker-header {
+    border: none;
+    background: transparent;
+}
+
+.step2 .p-datepicker .p-datepicker-header {
+    margin: 10px 0;
+}
+
+.step2 .p-datepicker.p-datepicker-mobile table th,
+.step2 .p-datepicker.p-datepicker-mobile table td {
+    padding: 4px;
+}
+
+.step2 .p-datepicker-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.step2 .p-datepicker-month {
+    color: #222B45;
+    font-size: 20px;
+}
+
+.step2 .p-datepicker-year {
+    color: #8F9BB3;
+    font-size: 12px;
+}
+
+.step2 .p-datepicker-prev,
+.step2 .p-datepicker-next {
+    width: 34px;
+    height: 34px;
+    border: 1px solid #E5E3FF;
+    border-radius: 8px;
+    background: #fff;
+}
+
+.step2 .p-datepicker-group {
+    padding-bottom: 10px;
+}
+
+.bg-main {
+    background: #F9F7FF;
+}
+
+.bor-main {
+    border-color: #f9f7ff;
+}
+
+.p-datepicker table td>span.p-highlight {
+    color: #fff;
+    background: #29265B;
+    border-radius: 12px;
+}
+
+.p-datepicker table td>span {
+    border-radius: 12px;
+}
+
+.p-datepicker table td>span:focus {
+    outline: none;
+}
+
+.p-rating .p-rating-item.p-rating-item-active .p-rating-icon {
+    color: #29265b !important;
+}
+
+.selected-manager .p-rating .p-rating-item.p-rating-item-active .p-rating-icon {
+    color: #fff !important;
+}
+
+.dialog-review .p-dialog-content {
+    height: auto;
+    max-height: 320px;
+    padding: 10px;
+}
+
+.dialog-review .p-dialog-header-icons {
+    display: none;
+}
+
+.underline-1 {
+    text-decoration: underline;
+    text-underline-offset: 1px;
+}
+
+.dialog-review {
+    border: 1px solid #E5E3FF;
+}
+
+.p-dialog .p-dialog-header,
+.p-dialog .p-dialog-content {
+    background: #F9F7FF !important;
 }

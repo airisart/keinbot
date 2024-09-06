@@ -54,7 +54,7 @@ watch(
 // }
 </script>
 <template>
-  <div v-if="data" class="col-12 py-2" style="display: flex; flex-wrap: wrap; gap: 6px">
+  <div v-if="data" class="col-12 py-2 " style="display: flex; flex-wrap: wrap;gap:6px; ">
     <template v-for="time in data" :key="time">
       <Tag
         :value="moment(time, 'HH:mm:ss').format('HH:mm')"
@@ -66,13 +66,16 @@ watch(
 </template>
 <style scoped>
 .p-tag {
-  margin-right: 6px;
+  /* margin-right: 6px; */
+  width: 75px;
   padding: 8px;
-  background: none !important;
-  border: 1px solid;
+  background: #e5e3ff !important;
+  border: 1px solid #e5e3ff;
+  color: #4f4f4f;
 }
 .p-tag.active {
-  background-color: #c6eee1 !important;
+  background-color: #29265b !important;
+  color: #fff;
 }
 .p-tag .p-tag-value {
   line-height: 2 !important;

@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Cookies from 'js-cookie'
 import HomeView from '@/views/HomeView.vue'
 import LoaderView from '@/views/LoaderView.vue'
+import SuccesView from '@/views/SuccesView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -15,6 +16,11 @@ const router = createRouter({
       path: '/home',
       name: 'home',
       component: HomeView
+    },
+    {
+      path: '/succes',
+      name: 'succes',
+      component: SuccesView
     },
     {
       path: '/orders',
