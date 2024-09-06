@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import Logo from '@/components/Logo.vue'
 import { useRouter } from 'vue-router'
+import Logo from '@/components/Logo.vue'
 const router = useRouter()
 
 const toHome = () => {

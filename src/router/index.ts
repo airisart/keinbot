@@ -2,7 +2,6 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Cookies from 'js-cookie'
 import HomeView from '@/views/HomeView.vue'
 import LoaderView from '@/views/LoaderView.vue'
-import SuccesView from '@/views/SuccesView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -20,13 +19,13 @@ const router = createRouter({
     {
       path: '/succes',
       name: 'succes',
-      component: SuccesView
+      component: () => import('@/views/OrdersView.vue')
     },
     {
       path: '/orders',
       name: 'orders',
       // @ts-ignore
-      component: () => import('@/views/OrdersView.vue')
+      component: () => import('@/views/SuccesView.vue')
     },
     {
       path: '/orders/:id(\\d+)',
