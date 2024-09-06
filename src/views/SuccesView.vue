@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useRouter } from 'vue-router'
-import Logo from '@/components/Logo.vue'
+import LogoComp from '../components/LogoComp.vue'
 const router = useRouter()
 
 const toHome = () => {
@@ -10,7 +10,7 @@ const toHome = () => {
 
 <template>
   <div class="wrapper_full h-full">
-    <Logo />
+    <LogoComp />
     <div class="flex-grow main_content succes-col">
       <div class="flex jus-cen">
         <h5 class="font-unbounded main_content_title">Ваша заявка на обмен создана</h5>

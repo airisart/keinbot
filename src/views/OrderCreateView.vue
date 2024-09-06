@@ -5,7 +5,7 @@ import { BackButton } from 'vue-tg'
 import StepOne from './order/StepOne.vue'
 import StepTwo from './order/StepTwo.vue'
 import StepThree from './order/StepThree.vue'
-import Logo from '@/components/Logo.vue'
+import Logo from '@/components/LogoComp.vue'
 
 const router = useRouter()
 

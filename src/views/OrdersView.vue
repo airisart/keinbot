@@ -4,7 +4,7 @@ import { BackButton } from 'vue-tg'
 import { useQuery } from '@tanstack/vue-query'
 import { DIRECT_LABEL, STATUS_LABEL } from '@/const'
 import { OrderListApi } from '@/api/order'
-import Logo from '@/components/Logo.vue'
+import Logo from '@/components/LogoComp.vue'
 
 const { data, isPending, isError } = useQuery({
   queryKey: ['orders'],
