@@ -85,7 +85,7 @@ watch(
 )
 </script>
 <template>
-  <div class="select-manager" v-if="data">
+  <div class="select-manager w-full" v-if="data">
     <!-- <Dropdown
       :disabled="!data"
       style="width: 100%"
@@ -123,7 +123,7 @@ watch(
   >
     <template #header>
       <div class="header-comment flex jus-beet">
-        <div class="flex flex-col manager-name ">
+        <div class="flex flex-col manager-name">
           <p>
             {{ showManager.label }}
           </p>
@@ -174,7 +174,7 @@ watch(
   display: flex;
   align-items: center;
   justify-content: space-between;
-
+  width: 100%;
   border: 1px solid #e5e3ff;
   background: #f9f7ff;
   border-radius: 6px;
