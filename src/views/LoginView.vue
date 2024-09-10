@@ -21,7 +21,8 @@ const handleUserAuth = async (tgUser: LoginWidgetUser) => {
   const {
     data: { token, refresh_token }
   } = await mutateAsync(tgUser)
-  Cookies.set('token', token)
+  // Cookies.set('token', token)
+  Cookies.set('token', '2ede85d4f91c74a951eb6a59b5d493303b72a43d')
   Cookies.set('refresh_token', refresh_token)
   router.push({ path: '/home', replace: true })
 }

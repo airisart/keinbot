@@ -19,13 +19,14 @@ const router = createRouter({
     {
       path: '/succes',
       name: 'succes',
-      component: () => import('@/views/OrdersView.vue')
+      component: () => import('@/views/SuccesView.vue')
     },
     {
       path: '/orders',
       name: 'orders',
+      component: () => import('@/views/OrdersView.vue')
       // @ts-ignore
-      component: () => import('@/views/SuccesView.vue')
+
     },
     {
       path: '/orders/:id(\\d+)',
