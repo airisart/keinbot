@@ -108,6 +108,7 @@ html {
 .p-stepper-panels {
     height: calc(100% - 100px);
     max-height: calc(100vh - 330px);
+    min-height: 600px !important;
 }
 
 .p-stepper-content {
