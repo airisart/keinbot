@@ -107,7 +107,7 @@ const validationForm = () => mutate(form.value)
         </template>
       </ConfirmDialog>
     </div>
-    <div class="d-flex" :class="error && 'jus-cen'">
+    <div class="d-flex pt-2" :class="error && 'jus-cen'">
       <div>
         <Button
           label="Назад"
@@ -176,5 +176,8 @@ const validationForm = () => mutate(form.value)
   color: #4f4f4f;
   font-size: 16px;
   font-weight: 500;
+}
+.pt-2 {
+  padding-top: 24px !important;
 }
 </style>
