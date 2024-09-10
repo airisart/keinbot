@@ -6,7 +6,7 @@ import { ExpandedViewport } from 'vue-tg'
 
 <template>
   <ExpandedViewport />
-  <div class="h-full wrapper">
+  <div class="min-h-full wrapper">
     <div class="container h-full">
       <!-- <div class="row">
         <div class="col-12">
@@ -22,7 +22,10 @@ import { ExpandedViewport } from 'vue-tg'
 .logo {
   display: block;
 }
-.wrapper{
-  background: #F9F7FF;
+.wrapper {
+  background: #f9f7ff;
+}
+.min-h-full {
+  min-height: 100vh;
 }
 </style>
