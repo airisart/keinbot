@@ -89,7 +89,5 @@ const onClick = (id: string) => {
   font-weight: 400 !important;
 }
 
-.bor {
-  border: 1px solid red;
-}
+
 </style>

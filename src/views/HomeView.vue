@@ -38,10 +38,15 @@ const reload = () => location.reload()
           <Button label="Мои заявки на обмен" />
         </RouterLink>
       </p>
+      <p>
+        <RouterLink to="/kurs">
+          <Button label="Курс USDT" />
+        </RouterLink>
+      </p>
     </div>
   </div>
 </template>
-<style scoped>
+<style>
 a {
   text-decoration: none;
 }

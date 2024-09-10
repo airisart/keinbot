@@ -39,6 +39,12 @@ const router = createRouter({
       name: 'order',
       // @ts-ignore
       component: () => import('@/views/OrderCreateView.vue')
+    },
+    {
+      path: '/kurs',
+      name: 'kurs',
+      // @ts-ignore
+      component: () => import('@/views/KursView.vue')
     }
   ]
 })
