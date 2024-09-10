@@ -164,7 +164,8 @@ const onSubmit = handleSubmit((values) => {
 .chevron-down {
   transition: all 0.3s ease;
 }
-.pt-4{
+.pt-4 {
   padding-top: 16px;
+  padding-bottom: 16px;
 }
 </style>

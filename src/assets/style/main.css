@@ -107,8 +107,9 @@ html {
 }
 
 .p-stepper-panels {
-    height: calc(100% - 100px);
-    max-height: calc(100vh - 330px);
+    /* height: calc(100% - 100px); */
+    height: auto;
+    /* max-height: calc(100vh - 330px); */
     /* min-height: 500px !important; */
 }
 
