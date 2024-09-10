@@ -76,8 +76,8 @@ const onSubmit = handleSubmit((values) => {
 })
 </script>
 <template>
-  <div class="step1-wrapper h-full">
-    <form @submit="onSubmit" class="step1-form">
+  <div class="step1-wrapper h-full ">
+    <form @submit="onSubmit" class="step1-form h-full">
       <div class="row">
         <div class="col-12">
           <Dropdown
@@ -146,7 +146,7 @@ const onSubmit = handleSubmit((values) => {
           />
         </div>
       </div>
-      <div class="flex jus-cen">
+      <div class="flex jus-cen ">
         <Button
           label="Далее"
           icon="pi pi-arrow-right "
@@ -159,6 +159,7 @@ const onSubmit = handleSubmit((values) => {
   </div>
 </template>
 <style>
+
 .step1-wrapper {
   margin-top: 24px;
 }
@@ -169,6 +170,7 @@ const onSubmit = handleSubmit((values) => {
 
 .step1-form {
   display: flex;
+  flex-grow: 1;
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
