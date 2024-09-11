@@ -73,7 +73,8 @@ html {
     /* overflow-y: auto;
     overflow-x: hidden; */
 }
-.app{
+
+.app {
     min-height: 100vh;
     background: #f9f7ff;
 }
@@ -293,4 +294,9 @@ html {
 .loc_input .p-inputtext {
     padding: 10px;
     border-color: #E5E3FF;
+}
+
+.p-dropdown-panel .p-dropdown-items .p-dropdown-item.p-highlight {
+    color: #fff;
+    background: #29265b;
 }

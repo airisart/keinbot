@@ -69,8 +69,8 @@ watch(
   /* margin-right: 6px; */
   width: 75px;
   padding: 8px;
-  background: #e5e3ff !important;
-  border: 1px solid #e5e3ff;
+  background: #F9F7FF !important;
+  border: 1px solid #E5E3FF;
   color: #4f4f4f;
 }
 .p-tag.active {
