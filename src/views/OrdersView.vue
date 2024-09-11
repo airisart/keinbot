@@ -22,7 +22,7 @@ const onClick = (id: string) => {
 </script>
 <template>
   <BackButton @click="handleBackButton" />
-  <div class="h-screen wrapper_full orders">
+  <div class="wrapper_full orders">
     <Logo />
     <div class="flex-grow main_content">
       <div class="col-12">
@@ -60,6 +60,7 @@ const onClick = (id: string) => {
               </span>
             </div>
           </div>
+         
         </div>
       </div>
     </div>
@@ -67,9 +68,8 @@ const onClick = (id: string) => {
 </template>
 
 <style scoped>
-.orders_items {
-  max-height: 500px;
-  overflow-y: auto;
+.wrapper_full {
+  min-height: 100vh;
 }
 .orders .item {
   border: 1px solid #e5e3ff;

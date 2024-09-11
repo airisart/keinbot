@@ -10,7 +10,6 @@ const router = useRouter()
 const { mutateAsync } = useMutation({ mutationFn: ValidationApi })
 
 onMounted(async () => {
-  //const token = Cookies.get('token')
   const token = sessionStorage.getItem('token')
   if (!token) {
     const { initData } = useWebApp()
@@ -20,7 +19,7 @@ onMounted(async () => {
         data: { token }
       } = await mutateAsync(initData)
       console.log('token', token)
-      //Cookies.set('token', token)
+      Cookies.set('token', token)
       sessionStorage.setItem('token', token)
       router.replace({ path: '/home' })
     } catch (e) {
