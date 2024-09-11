@@ -16,5 +16,9 @@ export default defineConfig({
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
+  },
+   server: {
+    host: '0.0.0.0',  // Allow external access
+    port: 5173,       // You can change the port if needed
   }
 })

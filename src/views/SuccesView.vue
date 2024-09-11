@@ -15,20 +15,29 @@ const toHome = () => {
       <div class="flex jus-cen">
         <h5 class="font-unbounded main_content_title">Ваша заявка на обмен создана</h5>
       </div>
-      <div class="flex jus-cen">
+      <div class="flex jus-cen mt-btn">
         <img src="@/assets/img/succes.png" />
       </div>
-      <div class="flex jus-cen">
+      <div class="flex jus-cen mt-btn">
         <Button label="В начало" type="submit" @click="toHome" />
       </div>
     </div>
   </div>
 </template>
 <style scoped>
+.mt-btn {
+  margin-top: 40px;
+}
+.h-full {
+  height: 100vh;
+
+}
 .succes-col {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  margin-bottom: 20px;
 }
 .succes-col img {
   width: 237px;

@@ -27,7 +27,7 @@ const reload = () => location.reload()
     <div class="col-12 cash m-0">
       <img alt="" class=" " src="@/assets/img/cash.png" />
     </div>
-    <div class="col-12 m-0">
+    <div class="col-12 m-0 home-btn">
       <p>
         <RouterLink to="/order">
           <Button label="Оформить обмен" class="" />
@@ -46,12 +46,19 @@ const reload = () => location.reload()
     </div>
   </div>
 </template>
-<style>
+<style scoped>
 a {
   text-decoration: none;
 }
 .m-0 {
   margin: 0;
+}
+.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  padding-top: 50px;
 }
 .row {
   display: flex;
@@ -78,5 +85,8 @@ p {
   position: absolute;
   right: 0;
   height: 237px;
+}
+.home-btn .p-button {
+  width: 185px;
 }
 </style>

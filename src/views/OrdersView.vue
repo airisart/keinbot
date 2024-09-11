@@ -22,7 +22,7 @@ const onClick = (id: string) => {
 </script>
 <template>
   <BackButton @click="handleBackButton" />
-  <div class="h-full wrapper_full orders">
+  <div class="h-screen wrapper_full orders">
     <Logo />
     <div class="flex-grow main_content">
       <div class="col-12">
@@ -31,7 +31,7 @@ const onClick = (id: string) => {
       <div class="col-12">
         <ProgressSpinner v-if="isPending" style="width: 48px; height: 48px" />
         <div v-if="isError">Ошибка загрузки</div>
-        <div v-else-if="data" class="">
+        <div v-else-if="data" class="orders_items">
           <!-- @click="() => onClick(order.id)" -->
           <div v-for="order in data" :key="order.id" class="item">
             <div>
@@ -66,7 +66,11 @@ const onClick = (id: string) => {
   </div>
 </template>
 
-<style>
+<style scoped>
+.orders_items {
+  max-height: 500px;
+  overflow-y: auto;
+}
 .orders .item {
   border: 1px solid #e5e3ff;
   border-radius: 6px;
@@ -80,14 +84,12 @@ const onClick = (id: string) => {
   gap: 12px;
 }
 
-.orders .item div{
-  color:#4F4F4F;
+.orders .item div {
+  color: #4f4f4f;
   font-weight: 600;
   font-size: 14px;
 }
-.orders .item div span{
+.orders .item div span {
   font-weight: 400 !important;
 }
-
-
 </style>

@@ -25,7 +25,5 @@ import { ExpandedViewport } from 'vue-tg'
 .wrapper {
   background: #f9f7ff;
 }
-.min-h-full {
-  min-height: 100vh;
-}
+
 </style>

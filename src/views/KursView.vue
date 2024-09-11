@@ -52,9 +52,7 @@ import Logo from '@/components/LogoComp.vue'
   width: 100%;
 }
 
-.h-screen {
-  height: 100vh;
-}
+
 .kurs_item {
   display: flex;
   justify-content: space-between;

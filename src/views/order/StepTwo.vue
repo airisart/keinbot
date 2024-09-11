@@ -94,7 +94,7 @@ const onSubmit = handleSubmit((values) => {
           <div class="col-12 w-100">
             <Calendar v-model="form.date" inline touchUI />
           </div>
-          <div class="col-12 w-100">
+          <div class="col-12 w-full loc_input">
             <InputText
               v-model="delivery_address"
               type="text"

@@ -31,36 +31,42 @@ const delivery_direction = [
 const { errors, defineField, handleSubmit } = useForm({
   initialValues: {
     type: 1,
-    delivery: null,
-    office: null
+    count: '',
+    direct: '',
+    office: '',
+    delivery: ''
   },
+
   validationSchema: toTypedSchema(
     z
       .object({
         type: z.coerce.number(),
-        count: z.coerce.number({ invalid_type_error: 'Укажите сумму' }),
-        direct: z.coerce.number({ invalid_type_error: 'Выберите направление обмена' }),
+        count: z.coerce.number({ invalid_type_error: 'Укажите сумму' }).min(1, 'Укажите сумму'),
+        direct: z.coerce
+          .number({ invalid_type_error: 'Выберите направление обмена' })
+          .min(1, 'Выберите направление обмена'),
         office: z.coerce.number().optional(),
         delivery: z.coerce.number().optional()
       })
-      .superRefine(({ type, office }, ctx) => {
-        if (type === 1 && office === undefined) {
+      .superRefine(({ type, office, delivery }, ctx) => {
+        if (type === 1 && !office) {
           ctx.addIssue({
             code: 'custom',
             message: 'Выберите офис',
             path: ['office']
           })
         }
-        if (type === 2 && delivery === undefined) {
+        if (type === 2 && !delivery) {
           ctx.addIssue({
             code: 'custom',
-            message: 'Выберите удаленность',
+            message: 'Выберите зону доставки',
             path: ['delivery']
           })
         }
       })
   )
 })
+
 const [count] = defineField('count')
 const [direct] = defineField('direct')
 const [type] = defineField('type')
@@ -107,7 +113,7 @@ const onSubmit = handleSubmit((values) => {
             class="flex jus-beet custom-select"
           />
         </div>
-        <div class="col-12" v-if="type === 1">
+        <div class="col-12" v-if="type == 1">
           <Dropdown
             v-model="office"
             :options="offices"
@@ -117,9 +123,9 @@ const onSubmit = handleSubmit((values) => {
             style="width: 100%"
             class="drop-down"
           />
-          <small class="error">{{ errors.direct }}</small>
+          <small class="error">{{ errors.office }} </small>
         </div>
-        <div class="col-12" v-if="type === 2">
+        <div class="col-12" v-if="type == 2">
           <Dropdown
             v-model="delivery"
             :options="delivery_direction"
@@ -129,7 +135,7 @@ const onSubmit = handleSubmit((values) => {
             style="width: 100%"
             class="drop-down"
           />
-          <small class="error">{{ errors.office }}</small>
+          <small class="error">{{ errors.delivery }} </small>
         </div>
         <div class="col-12" v-if="(office && type === 1) || (delivery && type === 2)">
           <RateInfo
@@ -161,6 +167,7 @@ const onSubmit = handleSubmit((values) => {
 <style>
 .step1-wrapper {
   margin-top: 24px;
+  min-height: 100%;
 }
 
 .step1-wrapper .next {

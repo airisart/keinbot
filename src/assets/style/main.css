@@ -63,10 +63,19 @@ html {
 
 }
 
-
+.h-screen {
+    height: 100vh;
+}
 
 .min-h-full {
-    min-height: 100%;
+    min-height: 700px;
+    height: auto;
+    /* overflow-y: auto;
+    overflow-x: hidden; */
+}
+.app{
+    min-height: 100vh;
+    background: #f9f7ff;
 }
 
 .w-full {
@@ -279,4 +288,9 @@ html {
 .p-dialog .p-dialog-header,
 .p-dialog .p-dialog-content {
     background: #F9F7FF !important;
+}
+
+.loc_input .p-inputtext {
+    padding: 10px;
+    border-color: #E5E3FF;
 }
