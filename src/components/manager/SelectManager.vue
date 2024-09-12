@@ -72,6 +72,15 @@ function handleClose() {
 function formatDate(time) {
   return dayjs(time).format('DD.MM.YYYY')
 }
+const pluralizeComment = (count) => {
+  const lastDigit = count % 10
+  const lastTwoDigits = count % 100
+
+  if (lastTwoDigits >= 11 && lastTwoDigits <= 14) return 'отзывов'
+  if (lastDigit === 1) return 'отзыв'
+  if (lastDigit >= 2 && lastDigit <= 4) return 'отзыва'
+  return 'отзывов'
+}
 
 watch(
   [office],
@@ -97,7 +106,7 @@ watch(
       placeholder="Менеджер офиса"
     /> -->
     <p class="">Выберите менеджера</p>
-
+   
     <div
       v-for="(manager, i) of managerRatings"
       :key="i"
@@ -132,7 +141,9 @@ watch(
             <p>{{ showManager.label }}</p>
             <div class="flex">
               <Rating v-model="showManager.rating" readonly :cancel="false" :stars="5" />
-              <span class="underline-1"> {{ comments.length }} отзывов </span>
+              <span class="underline-1">
+                {{ comments.length }} {{ pluralizeComment(11) }}
+              </span>
             </div>
           </div>
         </div>
