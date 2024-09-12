@@ -106,7 +106,7 @@ watch(
       placeholder="Менеджер офиса"
     /> -->
     <p class="">Выберите менеджера</p>
-   
+
     <div
       v-for="(manager, i) of managerRatings"
       :key="i"
@@ -141,9 +141,10 @@ watch(
             <p>{{ showManager.label }}</p>
             <div class="flex">
               <Rating v-model="showManager.rating" readonly :cancel="false" :stars="5" />
-              <span class="underline-1">
+              <span class="underline-1" v-if="comments.length != 0">
                 {{ comments.length }} {{ pluralizeComment(11) }}
               </span>
+              <span v-else class="underline-1">Отзывов пока нет</span>
             </div>
           </div>
         </div>
