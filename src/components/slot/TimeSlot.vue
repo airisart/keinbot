@@ -54,7 +54,7 @@ watch(
 // }
 </script>
 <template>
-  <div v-if="data" class="col-12 py-2 " style="display: flex; flex-wrap: wrap;gap:6px; ">
+  <div v-if="data" class="col-12 py-2 " style="display: flex; flex-wrap: wrap;gap:4px; ">
     <template v-for="time in data" :key="time">
       <Tag
         :value="moment(time, 'HH:mm:ss').format('HH:mm')"
