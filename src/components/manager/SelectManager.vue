@@ -105,12 +105,15 @@ watch(
       :class="selected == i && 'selected-manager'"
       @click="changeSelect(i, manager.id)"
     >
-      <span> {{ manager.label }} </span>
-      <div class="rating">
-        <Rating v-model="manager.rating" readonly :cancel="false" :stars="5" />
-        <span class="context underline-1" @click.stop="openCom(manager.id, manager)">
-          смотреть отзывы</span
-        >
+      <img src="@/assets/img/manager.png" height="48" />
+      <div class="flex-grow">
+        <span class=""> {{ manager.label }} </span>
+        <div class="rating">
+          <Rating v-model="manager.rating" readonly :cancel="false" :stars="5" />
+          <span class="context underline-1" @click.stop="openCom(manager.id, manager)">
+            смотреть отзывы</span
+          >
+        </div>
       </div>
     </div>
   </div>
@@ -123,13 +126,14 @@ watch(
   >
     <template #header>
       <div class="header-comment flex jus-beet">
-        <div class="flex flex-col manager-name">
-          <p>
-            {{ showManager.label }}
-          </p>
-          <div class="flex">
-            <Rating v-model="showManager.rating" readonly :cancel="false" :stars="5" />
-            <span class="underline-1"> {{ comments.length }} отзывов </span>
+        <div class="flex">
+          <img src="@/assets/img/manager.png" height="48" />
+          <div class="flex flex-col manager-name">
+            <p>{{ showManager.label }}</p>
+            <div class="flex">
+              <Rating v-model="showManager.rating" readonly :cancel="false" :stars="5" />
+              <span class="underline-1"> {{ comments.length }} отзывов </span>
+            </div>
           </div>
         </div>
         <!-- <span>Review {{ showManager }}</span> -->
@@ -173,12 +177,12 @@ watch(
 .manager-item {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 18px;
   width: 100%;
   border: 1px solid #e5e3ff;
   background: #f9f7ff;
   border-radius: 6px;
-  padding: 15px 20px;
+  padding: 10px;
   margin-bottom: 8px;
 }
 
@@ -195,8 +199,8 @@ watch(
 }
 .rating {
   display: flex;
-  flex-direction: column;
-  gap: 4px;
+  gap: 12px;
+  margin-top: 12px;
 }
 .rating .context {
   font-size: 12px;
@@ -247,13 +251,13 @@ watch(
   width: 100%;
 }
 .header-comment .manager-name {
-  gap: 12px;
+  justify-content: space-between;
   flex-grow: 1;
-  align-items: center;
+  margin-left: 18px;
 }
 .header-comment .manager-name p {
   color: #202020;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 600;
 }
 .manager-name .underline-1 {
