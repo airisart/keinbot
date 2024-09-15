@@ -2,8 +2,11 @@
 import { useForm } from 'vee-validate'
 import { toTypedSchema } from '@vee-validate/zod'
 import { z } from 'zod'
-import InputNumber from 'primevue/inputnumber';
+import InputNumber from 'primevue/inputnumber'
 import RateInfo from '@/components/rate/RateInfo.vue'
+import { ref } from 'vue'
+
+const inputNumberRef = ref(null)
 
 const emit = defineEmits(['next'])
 let form = defineModel()
@@ -68,9 +71,9 @@ const { errors, defineField, handleSubmit } = useForm({
 })
 const closeKeyboard = () => {
   if (inputNumberRef.value && document.activeElement === inputNumberRef.value.$el) {
-    document.activeElement.blur();
+    document.activeElement.blur()
   }
-};
+}
 
 const [count] = defineField('count')
 const [direct] = defineField('direct')
@@ -84,6 +87,11 @@ const onSubmit = handleSubmit((values) => {
     ...values
   }
   emit('next')
+})
+document.addEventListener('click', (event) => {
+  if (inputNumberRef.value && !inputNumberRef.value.$el.contains(event.target)) {
+    closeKeyboard()
+  }
 })
 </script>
 <template>
@@ -103,7 +111,14 @@ const onSubmit = handleSubmit((values) => {
           <small class="error">{{ errors.direct }}</small>
         </div>
         <div class="col-12" :class="errors.count && count && 'error-input'" @click="closeKeyboard">
-          <InputNumber v-model="count" placeholder="Сумма" style="width: 100%;" class=" number_input"  ref="inputNumberRef"/>
+          <InputNumber
+            v-model="count"
+            placeholder="Сумма"
+            style="width: 100%"
+            class="number_input"
+            ref="inputNumberRef"
+          />
+
           <small class="error">{{ errors.count }}</small>
         </div>
 
