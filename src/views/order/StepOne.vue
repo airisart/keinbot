@@ -70,9 +70,11 @@ const { errors, defineField, handleSubmit } = useForm({
   )
 })
 const closeKeyboard = () => {
-  if (inputNumberRef.value && document.activeElement === inputNumberRef.value.$el) {
+  if (!document.activeElement.classList.contains('p-inputnumber-input')) {
     document.activeElement.blur()
+    console.log('sa')
   }
+
 }
 
 const [count] = defineField('count')
@@ -110,13 +112,14 @@ document.addEventListener('click', (event) => {
           />
           <small class="error">{{ errors.direct }}</small>
         </div>
-        <div class="col-12" :class="errors.count && count && 'error-input'" @click="closeKeyboard">
+        <div class="col-12" :class="errors.count && count && 'error-input'" >
           <InputNumber
             v-model="count"
             placeholder="Сумма"
             style="width: 100%"
             class="number_input"
             ref="inputNumberRef"
+            @click="closeKeyboard"
           />
 
           <small class="error">{{ errors.count }}</small>
