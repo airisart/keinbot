@@ -70,8 +70,6 @@ html {
 .min-h-full {
     min-height: 700px;
     height: auto;
-    /* overflow-y: auto;
-    overflow-x: hidden; */
 }
 
 .app {
@@ -180,7 +178,8 @@ html {
     background: #CDF04C !important;
 }
 
-.drop-down {
+.drop-down,
+.number_input .p-inputtext {
     padding: 15px;
     font-size: 16px;
     color: #4f4f4f;
@@ -190,6 +189,7 @@ html {
     border-radius: 6px;
     outline: none;
     height: 48px;
+    -webkit-user-select: none;
 }
 
 .p-datepicker,
@@ -300,6 +300,7 @@ html {
     color: #fff;
     background: #29265b;
 }
-.p-tag-value{
+
+.p-tag-value {
     font-size: 16px;
 }

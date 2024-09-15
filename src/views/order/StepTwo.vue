@@ -128,6 +128,8 @@ const onSubmit = handleSubmit((values) => {
   overflow-y: auto;
   overflow-x: hidden;
   margin-top: 24px;
+  touch-action: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .select-kalendar {

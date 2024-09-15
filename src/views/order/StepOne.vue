@@ -2,7 +2,7 @@
 import { useForm } from 'vee-validate'
 import { toTypedSchema } from '@vee-validate/zod'
 import { z } from 'zod'
-
+import InputNumber from 'primevue/inputnumber';
 import RateInfo from '@/components/rate/RateInfo.vue'
 
 const emit = defineEmits(['next'])
@@ -31,7 +31,7 @@ const delivery_direction = [
 const { errors, defineField, handleSubmit } = useForm({
   initialValues: {
     type: 1,
-    count: '',
+    count: null,
     direct: '',
     office: '',
     delivery: ''
@@ -66,6 +66,11 @@ const { errors, defineField, handleSubmit } = useForm({
       })
   )
 })
+const closeKeyboard = () => {
+  if (inputNumberRef.value && document.activeElement === inputNumberRef.value.$el) {
+    document.activeElement.blur();
+  }
+};
 
 const [count] = defineField('count')
 const [direct] = defineField('direct')
@@ -98,7 +103,7 @@ const onSubmit = handleSubmit((values) => {
           <small class="error">{{ errors.direct }}</small>
         </div>
         <div class="col-12" :class="errors.count && count && 'error-input'">
-          <InputText v-model="count" placeholder="Сумма" style="width: 100%" class="drop-down" />
+          <InputNumber v-model="count" placeholder="Сумма" style="width: 100%;" class=" number_input"  ref="inputNumberRef"/>
           <small class="error">{{ errors.count }}</small>
         </div>
 
