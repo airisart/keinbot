@@ -102,7 +102,7 @@ const onSubmit = handleSubmit((values) => {
           />
           <small class="error">{{ errors.direct }}</small>
         </div>
-        <div class="col-12" :class="errors.count && count && 'error-input'">
+        <div class="col-12" :class="errors.count && count && 'error-input'" @click="closeKeyboard">
           <InputNumber v-model="count" placeholder="Сумма" style="width: 100%;" class=" number_input"  ref="inputNumberRef"/>
           <small class="error">{{ errors.count }}</small>
         </div>
