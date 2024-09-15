@@ -98,7 +98,7 @@ onMounted(() => {
     }
   })
   document.addEventListener('scroll', () => {
-    closeKeyboard()
+    document.activeElement.blur()
   })
 })
 onUnmounted(() => {
@@ -110,7 +110,7 @@ onUnmounted(() => {
     }
   })
   document.removeEventListener('scroll', () => {
-    closeKeyboard()
+    document.activeElement.blur()
   })
 })
 </script>
