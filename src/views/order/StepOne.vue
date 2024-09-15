@@ -4,7 +4,7 @@ import { toTypedSchema } from '@vee-validate/zod'
 import { z } from 'zod'
 import InputNumber from 'primevue/inputnumber'
 import RateInfo from '@/components/rate/RateInfo.vue'
-import { ref ,onUnmounted} from 'vue'
+import { ref, onUnmounted, onMounted } from 'vue'
 
 const inputNumberRef = ref(null)
 
@@ -72,9 +72,7 @@ const { errors, defineField, handleSubmit } = useForm({
 const closeKeyboard = () => {
   if (!document.activeElement.classList.contains('p-inputnumber-input')) {
     document.activeElement.blur()
-    // console.log('sa')
   }
-  // console.log('sa1')
 }
 
 const [count] = defineField('count')
@@ -91,27 +89,29 @@ const onSubmit = handleSubmit((values) => {
   emit('next')
 })
 
-document.addEventListener('click', (event) => {
-  const target = event.target
+onMounted(() => {
+  document.addEventListener('click', (event) => {
+    const target = event.target
 
-  if (target && !target.classList.contains('p-inputnumber-input')) {
+    if (target && !target.classList.contains('p-inputnumber-input')) {
+      closeKeyboard()
+    }
+  })
+  document.addEventListener('scroll', () => {
     closeKeyboard()
-  }
-})
-document.addEventListener('scroll', () => {
-  closeKeyboard()
+  })
 })
 onUnmounted(() => {
-  document.addEventListener('click', (event) => {
-  const target = event.target
+  document.removeEventListener('click', (event) => {
+    const target = event.target
 
-  if (target && !target.classList.contains('p-inputnumber-input')) {
+    if (target && !target.classList.contains('p-inputnumber-input')) {
+      closeKeyboard()
+    }
+  })
+  document.removeEventListener('scroll', () => {
     closeKeyboard()
-  }
-})
-document.addEventListener('scroll', () => {
-  closeKeyboard()
-})
+  })
 })
 </script>
 <template>
