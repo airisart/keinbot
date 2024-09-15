@@ -72,9 +72,7 @@ const { errors, defineField, handleSubmit } = useForm({
 const closeKeyboard = () => {
   if (!document.activeElement.classList.contains('p-inputnumber-input')) {
     document.activeElement.blur()
-    console.log('sa')
   }
-
 }
 
 const [count] = defineField('count')
@@ -90,10 +88,16 @@ const onSubmit = handleSubmit((values) => {
   }
   emit('next')
 })
+
 document.addEventListener('click', (event) => {
-  if (inputNumberRef.value && !inputNumberRef.value.$el.contains(event.target)) {
+  const target = event.target
+
+  if (target && !target.classList.contains('p-inputnumber-input')) {
     closeKeyboard()
   }
+})
+document.addEventListener('scroll', () => {
+  closeKeyboard()
 })
 </script>
 <template>
@@ -112,7 +116,7 @@ document.addEventListener('click', (event) => {
           />
           <small class="error">{{ errors.direct }}</small>
         </div>
-        <div class="col-12" :class="errors.count && count && 'error-input'" >
+        <div class="col-12" :class="errors.count && count && 'error-input'">
           <InputNumber
             v-model="count"
             placeholder="Сумма"
