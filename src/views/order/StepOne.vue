@@ -143,7 +143,7 @@ onUnmounted(() => {
           <small class="error">{{ errors.count }}</small>
         </div>
 
-        <div class="col-12">
+        <div class="col-12 step1-btn">
           <SelectButton
             v-model="type"
             :options="types"
@@ -244,11 +244,9 @@ onUnmounted(() => {
   left: 0px;
   top: 50%;
   transform: translateY(-50%);
-
   width: 18px;
   height: 18px;
   border-radius: 50%;
-
   background-color: #fff;
   border: 1px solid #e7e7e7;
   display: flex;
@@ -283,6 +281,14 @@ onUnmounted(() => {
   background: transparent;
   border: none;
   box-shadow: none;
+}
+@media only screen and (max-width: 390px) {
+ 
+  .step1-btn .p-button {
+    padding: 0px;
+    padding-left: 15px;
+  }
+
 }
 
 .error-input .drop-down {
